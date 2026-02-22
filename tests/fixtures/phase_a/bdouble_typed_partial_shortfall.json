@@ -1,0 +1,32 @@
+{
+  "_scenario": "Bdouble pallet demand exceeds all bdouble vehicle capacity. Partial shortfall remains.",
+  "_expected_status": "partial",
+  "_expected_shortfall_keys": ["bdouble_pallet"],
+  "_expected_phase_c_triggered": true,
+  "config": {
+    "vehicle_priority": "own",
+    "auto_fallback_to_leased": false,
+    "own_vehicle_selection": "fewest",
+    "subcontractor_selection": "fewest",
+    "allow_cross_type_fallback": false,
+    "phase_c_own_utilisation_threshold": 50
+  },
+  "orders": [
+    {
+      "order_id": "ORD-001",
+      "vehicle_type_required": "bdouble",
+      "high_dimension_preference": "pallet_space",
+      "capacity_required": { "pallet_space": 250, "weight_kg": null }
+    }
+  ],
+  "vehicles": [
+    {
+      "vehicle_id": "VEH-001",
+      "vehicle_type": "bdouble",
+      "type": "own",
+      "available": true,
+      "cost_per_trip": null,
+      "capacity": { "max_pallet_space": 200, "max_weight_kg": 8000 }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "_scenario": "Phase B weight typed demand covered. Flexible weight partially fills from selected. Remainder goes to Phase C. Phase C selects bdouble vehicle.",
+  "_expected_status": "full",
+  "_expected_phase_c_triggered": true,
+  "config": {
+    "vehicle_priority": "own",
+    "auto_fallback_to_leased": false,
+    "own_vehicle_selection": "fewest",
+    "subcontractor_selection": "fewest",
+    "allow_cross_type_fallback": false,
+    "phase_c_own_utilisation_threshold": 50
+  },
+  "orders": [
+    {
+      "order_id": "ORD-001",
+      "vehicle_type_required": "single",
+      "high_dimension_preference": "weight_kg",
+      "capacity_required": { "pallet_space": null, "weight_kg": 8000 }
+    },
+    {
+      "order_id": "ORD-002",
+      "vehicle_type_required": null,
+      "high_dimension_preference": "weight_kg",
+      "capacity_required": { "pallet_space": null, "weight_kg": 2000 }
+    }
+  ],
+  "vehicles": [
+    {
+      "vehicle_id": "VEH-001",
+      "vehicle_type": "single",
+      "type": "own",
+      "available": true,
+      "cost_per_trip": null,
+      "capacity": { "max_pallet_space": 150, "max_weight_kg": 5000 }
+    },
+    {
+      "vehicle_id": "VEH-002",
+      "vehicle_type": "single",
+      "type": "own",
+      "available": true,
+      "cost_per_trip": null,
+      "capacity": { "max_pallet_space": 100, "max_weight_kg": 4000 }
+    },
+    {
+      "vehicle_id": "VEH-003",
+      "vehicle_type": "bdouble",
+      "type": "own",
+      "available": true,
+      "cost_per_trip": null,
+      "capacity": { "max_pallet_space": 200, "max_weight_kg": 6000 }
+    }
+  ]
+}

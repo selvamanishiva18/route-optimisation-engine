@@ -1,0 +1,44 @@
+{
+  "_scenario": "Large batch with 20 orders across single and bdouble types, pallet and weight, plus flexible. Mixed own and subcon fleet. Full coverage expected.",
+  "_expected_status": "full",
+  "_expected_phase_c_triggered": false,
+  "config": {
+    "vehicle_priority": "own",
+    "auto_fallback_to_leased": true,
+    "own_vehicle_selection": "fewest",
+    "subcontractor_selection": "fewest",
+    "allow_cross_type_fallback": false,
+    "phase_c_own_utilisation_threshold": 50
+  },
+  "orders": [
+    { "order_id": "ORD-001", "vehicle_type_required": "single",  "high_dimension_preference": "pallet_space", "capacity_required": { "pallet_space": 50, "weight_kg": null } },
+    { "order_id": "ORD-002", "vehicle_type_required": "single",  "high_dimension_preference": "pallet_space", "capacity_required": { "pallet_space": 60, "weight_kg": null } },
+    { "order_id": "ORD-003", "vehicle_type_required": "single",  "high_dimension_preference": "pallet_space", "capacity_required": { "pallet_space": 40, "weight_kg": null } },
+    { "order_id": "ORD-004", "vehicle_type_required": "single",  "high_dimension_preference": "weight_kg",    "capacity_required": { "pallet_space": null, "weight_kg": 1500 } },
+    { "order_id": "ORD-005", "vehicle_type_required": "single",  "high_dimension_preference": "weight_kg",    "capacity_required": { "pallet_space": null, "weight_kg": 2000 } },
+    { "order_id": "ORD-006", "vehicle_type_required": "bdouble", "high_dimension_preference": "pallet_space", "capacity_required": { "pallet_space": 100, "weight_kg": null } },
+    { "order_id": "ORD-007", "vehicle_type_required": "bdouble", "high_dimension_preference": "pallet_space", "capacity_required": { "pallet_space": 120, "weight_kg": null } },
+    { "order_id": "ORD-008", "vehicle_type_required": "bdouble", "high_dimension_preference": "pallet_space", "capacity_required": { "pallet_space": 80, "weight_kg": null } },
+    { "order_id": "ORD-009", "vehicle_type_required": "bdouble", "high_dimension_preference": "weight_kg",    "capacity_required": { "pallet_space": null, "weight_kg": 1500 } },
+    { "order_id": "ORD-010", "vehicle_type_required": "bdouble", "high_dimension_preference": "weight_kg",    "capacity_required": { "pallet_space": null, "weight_kg": 2500 } },
+    { "order_id": "ORD-011", "vehicle_type_required": null,      "high_dimension_preference": "pallet_space", "capacity_required": { "pallet_space": 20, "weight_kg": null } },
+    { "order_id": "ORD-012", "vehicle_type_required": null,      "high_dimension_preference": "pallet_space", "capacity_required": { "pallet_space": 15, "weight_kg": null } },
+    { "order_id": "ORD-013", "vehicle_type_required": null,      "high_dimension_preference": "weight_kg",    "capacity_required": { "pallet_space": null, "weight_kg": 800 } },
+    { "order_id": "ORD-014", "vehicle_type_required": null,      "high_dimension_preference": "weight_kg",    "capacity_required": { "pallet_space": null, "weight_kg": 1200 } },
+    { "order_id": "ORD-015", "vehicle_type_required": "single",  "high_dimension_preference": "pallet_space", "capacity_required": { "pallet_space": 30, "weight_kg": null } },
+    { "order_id": "ORD-016", "vehicle_type_required": "single",  "high_dimension_preference": "weight_kg",    "capacity_required": { "pallet_space": null, "weight_kg": 1000 } },
+    { "order_id": "ORD-017", "vehicle_type_required": "bdouble", "high_dimension_preference": "pallet_space", "capacity_required": { "pallet_space": 60, "weight_kg": null } },
+    { "order_id": "ORD-018", "vehicle_type_required": "bdouble", "high_dimension_preference": "weight_kg",    "capacity_required": { "pallet_space": null, "weight_kg": 1000 } },
+    { "order_id": "ORD-019", "vehicle_type_required": null,      "high_dimension_preference": "pallet_space", "capacity_required": { "pallet_space": 25, "weight_kg": null } },
+    { "order_id": "ORD-020", "vehicle_type_required": null,      "high_dimension_preference": "weight_kg",    "capacity_required": { "pallet_space": null, "weight_kg": 500 } }
+  ],
+  "vehicles": [
+    { "vehicle_id": "VEH-001", "vehicle_type": "single",  "type": "own",          "available": true, "cost_per_trip": null,  "capacity": { "max_pallet_space": 150, "max_weight_kg": 5000 } },
+    { "vehicle_id": "VEH-002", "vehicle_type": "single",  "type": "own",          "available": true, "cost_per_trip": null,  "capacity": { "max_pallet_space": 120, "max_weight_kg": 4000 } },
+    { "vehicle_id": "VEH-003", "vehicle_type": "single",  "type": "subcontractor","available": true, "cost_per_trip": 180.0, "capacity": { "max_pallet_space": 100, "max_weight_kg": 3500 } },
+    { "vehicle_id": "VEH-004", "vehicle_type": "bdouble", "type": "own",          "available": true, "cost_per_trip": null,  "capacity": { "max_pallet_space": 200, "max_weight_kg": 8000 } },
+    { "vehicle_id": "VEH-005", "vehicle_type": "bdouble", "type": "own",          "available": true, "cost_per_trip": null,  "capacity": { "max_pallet_space": 180, "max_weight_kg": 7000 } },
+    { "vehicle_id": "VEH-006", "vehicle_type": "bdouble", "type": "subcontractor","available": true, "cost_per_trip": 350.0, "capacity": { "max_pallet_space": 150, "max_weight_kg": 6000 } },
+    { "vehicle_id": "VEH-007", "vehicle_type": "single",  "type": "own",          "available": true, "cost_per_trip": null,  "capacity": { "max_pallet_space": 80,  "max_weight_kg": 3000 } }
+  ]
+}

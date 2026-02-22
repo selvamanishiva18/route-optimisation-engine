@@ -1,0 +1,45 @@
+{
+  "_scenario": "vehicle_priority=both. Candidates sorted by capacity DESC regardless of ownership. Both own and subcon in same pool.",
+  "_expected_status": "full",
+  "_expected_phase_c_triggered": false,
+  "config": {
+    "vehicle_priority": "both",
+    "auto_fallback_to_leased": true,
+    "own_vehicle_selection": "fewest",
+    "subcontractor_selection": "fewest",
+    "allow_cross_type_fallback": false,
+    "phase_c_own_utilisation_threshold": 50
+  },
+  "orders": [
+    {
+      "order_id": "ORD-001",
+      "vehicle_type_required": "single",
+      "high_dimension_preference": "pallet_space",
+      "capacity_required": { "pallet_space": 120, "weight_kg": null }
+    },
+    {
+      "order_id": "ORD-002",
+      "vehicle_type_required": "single",
+      "high_dimension_preference": "weight_kg",
+      "capacity_required": { "pallet_space": null, "weight_kg": 4000 }
+    }
+  ],
+  "vehicles": [
+    {
+      "vehicle_id": "VEH-001",
+      "vehicle_type": "single",
+      "type": "own",
+      "available": true,
+      "cost_per_trip": null,
+      "capacity": { "max_pallet_space": 80, "max_weight_kg": 6000 }
+    },
+    {
+      "vehicle_id": "VEH-002",
+      "vehicle_type": "single",
+      "type": "subcontractor",
+      "available": true,
+      "cost_per_trip": 200.0,
+      "capacity": { "max_pallet_space": 150, "max_weight_kg": 3000 }
+    }
+  ]
+}

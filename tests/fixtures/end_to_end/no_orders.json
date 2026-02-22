@@ -1,0 +1,24 @@
+{
+  "_scenario": "Empty orders list. Validator rejects with error.",
+  "_expected_status": "error",
+  "_expected_error": "No orders provided",
+  "config": {
+    "vehicle_priority": "own",
+    "auto_fallback_to_leased": false,
+    "own_vehicle_selection": "fewest",
+    "subcontractor_selection": "fewest",
+    "allow_cross_type_fallback": false,
+    "phase_c_own_utilisation_threshold": 50
+  },
+  "orders": [],
+  "vehicles": [
+    {
+      "vehicle_id": "VEH-001",
+      "vehicle_type": "single",
+      "type": "own",
+      "available": true,
+      "cost_per_trip": null,
+      "capacity": { "max_pallet_space": 150, "max_weight_kg": 5000 }
+    }
+  ]
+}
